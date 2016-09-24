@@ -55,4 +55,8 @@ public class CreatureController : MonoBehaviour
     {
         get { return 7; }
     }
+
+    // Settable from inside the unity editor;
+    public GameObject frontImage;
+    public GameObject backImage;
 }
