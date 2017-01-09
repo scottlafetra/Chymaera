@@ -336,7 +336,7 @@ public class BattleController : MonoBehaviour
 
         for( int i = 0; i < teamRanges.Count; ++i )
         {
-            if( teamRanges[ i ][ 0 ] != teamRanges[ i ][ 1 ] )
+            if( teamRanges[ i ][ 0 ] <= teamRanges[ i ][ 1 ] )
             {
                 teamsStanding++;
                 winningTeam = i;
