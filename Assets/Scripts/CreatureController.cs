@@ -126,7 +126,7 @@ public class CreatureController : MonoBehaviour
         {
             fainted();
         }
-        yield return BattleController.instance.DisplayMessage( creatureName + " has fainted!" );
+        yield return BattleController.instance.messageBox.DisplayMessage( creatureName + " has fainted!" );
 
         // Switch out
         yield return BattleController.instance.CreatureToHandler( this ).SwitchCreature();

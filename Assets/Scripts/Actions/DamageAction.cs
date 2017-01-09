@@ -8,9 +8,8 @@ public class DamageAction : Action
     public override IEnumerator Act()
     {
         // TODO: Replace placeholder
-        Debug.Log( "[Damage Action \"" + actionName + "\" with " + damageAmount + " damage , targeting \""
-            + target.GetComponent<CreatureController>().creatureName + "\" acting]" );
-        yield return new WaitForSeconds( 1 );
+        yield return BattleController.instance.messageBox.DisplayMessage( actor.creatureName + " uses " + actionName + " on " + target.GetComponent<CreatureController>().creatureName + "!" );
+
         yield return target.ApplyDamage( (uint)damageAmount );
     }
 }

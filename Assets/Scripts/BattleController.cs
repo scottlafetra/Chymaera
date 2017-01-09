@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
@@ -61,6 +62,8 @@ public class BattleController : MonoBehaviour
     public GameObject label;
     public float labelSpaceing;
     public float contentOffset;
+
+    public MessageBoxController messageBox;
 
     // Use this for initialization
     void Start()
@@ -199,13 +202,7 @@ public class BattleController : MonoBehaviour
 #       pragma warning restore 0219
     }
 
-    //Displays some message to the user
-    public IEnumerator DisplayMessage(string message)
-    {
-        //TODO: Make function
-        Debug.Log( message );
-        yield return new WaitForSeconds( 1 );
-    }
+    
 
     public void ActionChosen(CreatureController creature)
     {
@@ -362,11 +359,11 @@ public class BattleController : MonoBehaviour
     {
         if( victorousTeam == playerTeam )// If the player lost
         {
-            yield return DisplayMessage( "You have won the battle!" );
+            yield return messageBox.DisplayMessage( "You have won the battle!" );
         }
         else
         {
-            yield return DisplayMessage( "You have lost the battle..." );
+            yield return messageBox.DisplayMessage( "You have lost the battle..." );
         }
 
         yield return new WaitForSeconds( 3 );
