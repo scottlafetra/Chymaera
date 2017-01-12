@@ -4,11 +4,22 @@ using System.Collections.Generic;
 
 public class DemoController : MonoBehaviour
 {
-    public CreatureController playerCreature;
-    public CreatureController AICreature;
+    // Set by fetching from loader [ index ]
+    private CreatureController playerCreature; // [ 0 ]
+    private CreatureController AICreature;     // [ 1 ]
 
-    public PlayerHandler playerHandler;
-    public PlayerHandler AIHandler;
+    private PlayerHandler playerHandler;       // [ 2 ]
+    private PlayerHandler AIHandler;           // [ 3 ]
+
+    public LoadOnce loader;
+
+    void Start()
+    {
+        playerCreature = loader.GetInstance( 0 ).GetComponent<CreatureController>();
+        AICreature     = loader.GetInstance( 1 ).GetComponent<CreatureController>();
+        playerHandler  = loader.GetInstance( 2 ).GetComponent<PlayerHandler>();
+        AIHandler      = loader.GetInstance( 3 ).GetComponent<PlayerHandler>();
+    }
 
     public void StartBattle()
     {
