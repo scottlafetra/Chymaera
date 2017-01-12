@@ -6,11 +6,6 @@ public class PlayerHandler : MonoBehaviour
     public delegate void ActionChosenHandler(CreatureController actor);
     public event ActionChosenHandler actionChosen;
 
-    void Start()
-    {
-        DontDestroyOnLoad( this );
-    }
-
     // Battle Controller will subscribe us with this function
     public virtual void ChooseAction()
     {

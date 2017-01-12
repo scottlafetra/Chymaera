@@ -113,12 +113,6 @@ public class CreatureController : MonoBehaviour
     public GameObject frontImage;
     public GameObject backImage;
 
-    void Start()
-    {
-        // We don't want our creatures to be reset between scenes!
-        DontDestroyOnLoad( this );
-    }
-
     public IEnumerator Faint()
     {
         // Tell everyone that we fainted
